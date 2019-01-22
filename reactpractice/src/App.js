@@ -9,7 +9,10 @@ class App extends Component {
   state = {
     cards
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6aede3a06334c64ec3661d02c71997737dcfee5
   render() {
     return (
       <Wrapper>
