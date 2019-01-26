@@ -1,12 +1,13 @@
 import React from "react";
 import "./CharCard.css";
 
-const CharCard = props => (
-  <div className="card">
-    <div className="img-container">
-      <img alt={props.name} src={props.image} />
-    </div>
-  </div>
-);
+const charCard = (props) =>{ 
+    return(
+        <div className="CharCard">
+            <img src={props.src} alt="img" onClick={props.click} />
+        </div>
+    )
+}
 
-export default CharCard;
+
+export default charCard;
