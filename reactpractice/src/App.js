@@ -14,6 +14,7 @@ class App extends Component {
     score:0
   };
   clickHandler = (cardIndex) =>{
+    if(this.state.clickedCard.indexOf(cardIndex)<0){
     const arr=[...this.state.clickedCard];
     arr.push(cardIndex)
     console.log(arr);
@@ -21,8 +22,15 @@ class App extends Component {
       score: this.state.score + 1, 
       clickedCard:arr, 
       correctWord:"correct!"
-    });
+    })
+    }
+    else{console.log('wrong!'); this.resetGameHandler()}
   };
+  resetGameHandler =()=>{
+    this.setState({
+      score:0
+    })
+  }
   // newGameHandler = () =>{
   //   const newArr=[];
   //   this.setState({ 
@@ -33,9 +41,6 @@ class App extends Component {
   // };
 render(){
 
-  // if(this.state.clickedCard.indexOf(index)<0){
-
-  // }
 return(
   <div>
 
