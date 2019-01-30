@@ -6,7 +6,7 @@ const Nav = props => {
         <div className="Nav">
             <p>LOGO</p>
             <p>TITLE {props.correct}</p>
-            <p>SCORE:{props.score} | HIGHEST SCORE:</p>
+            <p>SCORE:{props.score} | HIGHEST SCORE:{props.topscore}</p>
         </div>
     )       
 }

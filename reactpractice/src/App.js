@@ -5,46 +5,47 @@ import Nav from "./components/Nav";
 import cards from "./cards.json";
 import Radium from 'radium';
 import "./App.css";
+import Shuffle from 'lodash.shuffle';
 
 class App extends Component {
   state = {
     cards,
     clickedCard:[],
     correctWord:"",
-    score:0
+    score:0,
+    topscore:0
   };
-  clickHandler = (cardIndex) =>{
-    if(this.state.clickedCard.indexOf(cardIndex)<0){
+  clickHandler = (index) =>{
+    if(this.state.clickedCard.indexOf(index)<0){
     const arr=[...this.state.clickedCard];
-    arr.push(cardIndex)
-    console.log(arr);
+    arr.push(index)
+    const shuffledCrads=Shuffle(cards);
     this.setState({ 
+      cards: shuffledCrads,
       score: this.state.score + 1, 
       clickedCard:arr, 
       correctWord:"correct!"
     })
     }
-    else{console.log('wrong!'); this.resetGameHandler()}
+    else{this.resetGameHandler()};
+    if(this.state.score > this.state.topscore){
+      this.setState({topscore:this.state.score})
+    }
   };
   resetGameHandler =()=>{
     this.setState({
-      score:0
+      clickedCard:[],
+      score:0,
+      correctWord:"wrong!",
     })
   }
-  // newGameHandler = () =>{
-  //   const newArr=[];
-  //   this.setState({ 
-  //     score: 0, 
-  //     clickedCard:newArr, 
-  //     correctWord:"wrong!"
-  //   });
-  // };
+
 render(){
 
 return(
   <div>
 
-  <Nav score={this.state.score} correct={this.state.correctWord} />
+  <Nav score={this.state.score} correct={this.state.correctWord} topscore={this.state.topscore} />
   <Jumbotron />
     <div className="imgContainer">
       {this.state.cards.map((card, index)=>{
