@@ -15,16 +15,16 @@ class App extends Component {
     score:0,
     topscore:0
   };
-  clickHandler = (index) =>{
-    if(this.state.clickedCard.indexOf(index)<0){
+  clickHandler = (cardId) =>{
+    if(this.state.clickedCard.indexOf(cardId)<0){
     const arr=[...this.state.clickedCard];
-    arr.push(index)
+    arr.push(cardId)
     const shuffledCrads=Shuffle(cards);
     this.setState({ 
       cards: shuffledCrads,
       score: this.state.score + 1, 
       clickedCard:arr, 
-      correctWord:"correct!"
+      correctWord:"You are right!"
     })
     }
     else{this.resetGameHandler()};
@@ -36,7 +36,7 @@ class App extends Component {
     this.setState({
       clickedCard:[],
       score:0,
-      correctWord:"wrong!",
+      correctWord:"It was a wrong chose!",
     })
   }
 
@@ -48,9 +48,9 @@ return(
   <Nav score={this.state.score} correct={this.state.correctWord} topscore={this.state.topscore} />
   <Jumbotron />
     <div className="imgContainer">
-      {this.state.cards.map((card, index)=>{
+      {this.state.cards.map((card, cardId)=>{
         return <CharCard 
-                click={() => this.clickHandler(index)}
+                click={() => this.clickHandler(card.id)}
                 src={card.image}                
                 key={card.id} />
         }  

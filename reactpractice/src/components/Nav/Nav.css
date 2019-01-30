@@ -1,5 +1,11 @@
 .Nav {
     width: 100%;
     font-size:1.5rem;
-    background-color:#2A77AE;
+    background-color: #FF5964; 
+    color:#38618C;
+    font-weight: bold;   
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
