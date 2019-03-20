@@ -36,7 +36,7 @@ class App extends Component {
     this.setState({
       clickedCard:[],
       score:0,
-      correctWord:"It was a wrong chose!",
+      correctWord:"It was a wrong choice!",
     })
   }
 
