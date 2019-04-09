@@ -1,16 +1,15 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: oraniebaum, sans-serif;
   }
   @font-face {
     font-family: oraniebaum;
-    src: url(assets/oranienbaum.ttf);
+    src: url('assets/oranienbaum.ttf');
   }
   html, body, #root {
     padding: 0;
     margin: 0;
     height: 100%;
-    font-family: oraniebaum, sans-serif;
     background-color: #EEEEEE;
   }
   
