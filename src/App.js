@@ -43,7 +43,7 @@ class App extends Component {
 render(){
 
 return(
-  <div>
+  <div className="container">
 
   <Nav score={this.state.score} correct={this.state.correctWord} topscore={this.state.topscore} />
   <Jumbotron />

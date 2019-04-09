@@ -6,4 +6,8 @@ header.Jumbotron {
   padding: 8px 20px;
   text-align: center;
 }
-  
+@media(max-width: 400px){
+  h1, h2, h3{
+    font-size:1.4rem;
+  }
+}

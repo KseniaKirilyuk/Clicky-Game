@@ -9,3 +9,18 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+@media(max-width: 400px){
+.Nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+.Nav p:nth-child(1) {
+    display: none;
+}
+.Nav p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+}
