@@ -1,7 +1,7 @@
 .Nav {
     width: 100%;
     font-size:1.5rem;
-    background-color: #FF5964; 
+    background-image: url(../../assets/marble.jpg); 
     color:#38618C;
     font-weight: bold;   
     display: flex;
